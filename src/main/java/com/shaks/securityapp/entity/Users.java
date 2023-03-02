@@ -25,16 +25,16 @@ public class Users implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 50, name = "full_name")
+//    @Column(nullable = false, length = 50, name = "full_name")
     private String fullName;
 
-    @Column(nullable = false, length = 50, name = "user_name")
+//    @Column(nullable = false, length = 50, name = "user_name")
     private String username;
 
-    @Column(nullable = false, length = 50, name = "email")
+//    @Column(nullable = false, length = 50, name = "email")
     private String email;
 
-    @Column(nullable = false, length = 50, name = "password")
+//    @Column(nullable = false, length = 50, name = "password")
     private String password;
 
     @ManyToMany

@@ -22,27 +22,29 @@ public class SecurityAppApplication {
         SpringApplication.run(SecurityAppApplication.class, args);
     }
 
+
     @Bean
-    BCryptPasswordEncoder passwordEncoder() {
+    BCryptPasswordEncoder bCryptPasswordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    CommandLineRunner run(UserService userService){
-        return args ->{
-            userService.saveRole(new Role(null, "ROLE_USER"));
-            userService.saveRole(new Role(null, "ROLE_MANAGER"));
-            userService.saveRole(new Role(null, "ROLE_ADMIN"));
-            userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
-
-            userService.saveUser(new Users(null, "John Travolta", "john", "1234", "john@gmail.com", new HashSet<>()));
-            userService.saveUser(new Users(null, "Faith Stephen", "faith", "0987", "faith@gmail.com", new HashSet<>()));
-
-            userService.addToUser("john", "ROLE_USER");
-            userService.addToUser("john", "ROLE_MANAGER");
-            userService.addToUser("john", "ROLE_ADMIN");
-            userService.addToUser("john", "ROLE_SUPER_ADMIN");
-        };
-    }
+//    @Bean
+//    CommandLineRunner run(UserService userService){
+//        return args ->{
+//            userService.saveRole(new Role(null, "ROLE_USER"));
+//            userService.saveRole(new Role(null, "ROLE_MANAGER"));
+//            userService.saveRole(new Role(null, "ROLE_ADMIN"));
+//            userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
+//
+//            userService.saveUser(new Users(null, "John Travolta", "john", "john@gmail.com", "1234", new HashSet<>()));
+//            userService.saveUser(new Users(null, "Faith Stephen", "faith", "faith@gmail.com", "0987", new HashSet<>()));
+//
+//            userService.addToUser("john", "ROLE_USER");
+//            userService.addToUser("john", "ROLE_MANAGER");
+//            userService.addToUser("faith", "ROLE_ADMIN");
+//            userService.addToUser("faith", "ROLE_SUPER_ADMIN");
+//        };
+//    }
 
 }

@@ -24,7 +24,6 @@ public class Role {
     @SequenceGenerator(name = "rolesSeq", sequenceName = "roles_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "rolesSeq")
     private Long id;
-
     private String name;
 
     @ManyToMany(mappedBy = "roles")
@@ -34,6 +33,10 @@ public class Role {
 
     public Role(Long id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Role( String name) {
         this.name = name;
     }
 }
